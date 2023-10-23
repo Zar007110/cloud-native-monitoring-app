@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>System Monitoring</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            margin: 0 auto;
+        }
+        .indicator {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+        .cpu-indicator {
+            background-color: green;
+        }
+        .mem-indicator {
+            background-color: green;
+        }
+        .warning {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>System Monitoring</h1>
+    <div class="container">
+        <div class="indicator cpu-indicator">
+            <h2>CPU</h2>
+            <p>{{ cpu_percent }}%</p>
+        </div>
+        <div class="indicator mem-indicator">
+            <h2>Memory</h2>
+            <p>{{ mem_percent }}%</p>
+        </div>
+        {% if message %}
+            <div class="warning">
+                <p>{{ message }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
